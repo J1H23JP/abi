@@ -12,10 +12,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            overflow-y: auto;
             position: relative;
+            flex-direction: column;
         }
         .card {
             background: white;
@@ -25,6 +26,7 @@
             max-width: 400px;
             position: relative;
             z-index: 10;
+            margin: 20px 0;
         }
         h1 {
             color: #ff4d4d;
