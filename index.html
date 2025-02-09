@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffcccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            position: relative;
+            z-index: 10;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+            color: red;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .photo {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: #ff4d4d;
+            border: 2px solid #ff4d4d;
+            position: absolute;
+        }
+        .heart-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .floating-heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+        }
+        @keyframes floatUp {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-animation">
+        <div class="floating-heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+        <div class="floating-heart" style="left: 30%; animation-delay: 1s;">💖</div>
+        <div class="floating-heart" style="left: 50%; animation-delay: 2s;">💕</div>
+        <div class="floating-heart" style="left: 70%; animation-delay: 3s;">❤️</div>
+        <div class="floating-heart" style="left: 90%; animation-delay: 4s;">💖</div>
+    </div>
+    <div class="card">
+        <img src="images.jpg" alt="Nuestra Foto" class="photo">
+        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+        <div class="heart">💖</div>
+        <div class="buttons">
+            <button class="yes" onclick="yesAnswer()">¡Sí!</button>
+            <button class="no" id="noButton" onmouseover="moveButton(this)">No 😢</button>
+        </div>
+    </div>
+    
+    <script>
+        function yesAnswer() {
+            alert("Sabía que dirías que sí JAJAJA (El no, no se puede escoger XD) Agendame un tiempo en tu calendario el 14 de febrero matosita 🫶");
+        }
+
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
